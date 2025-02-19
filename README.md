@@ -16,7 +16,7 @@ When we need data from the database, or we want insert new data, we send request
 
 ![Pasted image 20241104201227](https://github.com/user-attachments/assets/53081f06-c525-46d2-aaaa-38bb7a7b203d)
 
-> Tip
+> Tip:
 > This flowchart is basic, because we could use an `API` to filter any `SQL
 >  injection` and we call it a `Secure API`
 
@@ -167,7 +167,7 @@ we run the code by: `python app.py` and here the output:
 
 Everything is great! The flask app is running without errors, and this app won't end until I press `Ctrl + C ` as developer, also as we can see: `Debug mode: on` and that's a choice I made it earlier when I faced a lot of errors. 
 
-> State
+> State:
 > App is running!
 
 We can go to http://127.0.0.1:5000 for testing our secure backend, now I will try to inject SQL in the login-form: 
