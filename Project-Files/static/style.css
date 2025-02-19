@@ -1,0 +1,76 @@
+/* Enhanced styles for the login form */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #00796b;
+}
+
+.input-field {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-field input:focus {
+    border-color: #00796b;
+}
+
+.input-field .underline {
+    height: 2px;
+    background-color: #ddd;
+    transition: background-color 0.3s;
+}
+
+.input-field input:focus ~ .underline {
+    background-color: #00796b;
+}
+
+input[type="submit"] {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #004d40;
+}
+
+.footer {
+    margin-top: 20px;
+}
+
+.footer span {
+    display: block;
+    margin-bottom: 10px;
+    color: #757575;
+}
