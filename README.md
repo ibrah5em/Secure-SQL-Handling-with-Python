@@ -1,13 +1,14 @@
 ## introduction
 
-When I think about `SQL` first thing I imagen, random hacker trying to inject  queries in my web site, for example: trying to access some data, editing my database. in the last lab I took [[SQL injection]] as concept, and I understand the hackers methods, so I have to do two things: 
+When I think about `SQL` first thing I imagen, random hacker trying to inject  queries in my web site, for example: trying to access some data, editing my database. in the last lab I took `SQL injection` as concept, and I understand the hackers methods, so I have to do two things: 
 
 1. Python script that connect to a database. 
 2. Python backend that filter methods of SQL injection.
 
-First thing: I have small knowledge about [[Data Bases]] ,but in general this is my first time with SQL commands, I used before non-relational-database.
+First thing: I have small knowledge about Data Bases , but in general this is my first time with SQL commands, I used before non-relational-database.
 
 Second thing: Most of students will use `sqllite3` because that's what copilot said, for me I will understand the pure code, and take this homework as project to learn new things, not only to pass the homework.
+
 
 ## Project Details 
 
@@ -21,9 +22,11 @@ When we need data from the database, or we want insert new data, we send request
 
 So the backend is the responsible for select and insert, for that we want a filter in python to prevent [[SQL injection]] 
 
-1. Frontend: [[HTML]] and [[CSS]] and [[JavaScript]]    
-2. Backend: [[Python]] 
-3. DataBase: [[Microsoft SQL Server]]
+1. Frontend: HTML and CSS and JavaScript
+2. Backend: Python
+3. DataBase: Microsoft SQL Server
+
+---
 
 ## Frontend
 
@@ -36,6 +39,8 @@ I didn't use any frameworks, I just used HTML and CSS and JavaScript
 
 You can find the code of these files at `/Project-Files/template` and `/Project-Files/static` and it's standard way to organize files while building basic web pages like that
 
+
+---
 
 ## Database
 
@@ -51,6 +56,8 @@ I opened Microsoft SQL Server and then made a new database called `myDB` then I 
     -- Insert example data 
  INSERT INTO users (username, password) VALUES ('admin', 'admin');
 ```
+
+---
 
 ## Backend 
 
@@ -147,7 +154,6 @@ from these two examples, we can now build the idea we want, and we know python i
 
 ---
 
-
 ## The Project 
 
 We are done! here are the project files in `/Project-Files` I used `Vs Code` to make this project. This also my first try with building `backend` and linking database . 
@@ -160,7 +166,6 @@ we run the code by: `python app.py` and here the output:
 
 
 Everything is great! The flask app is running without errors, and this app won't end until I press `Ctrl + C ` as developer, also as we can see: `Debug mode: on` and that's a choice I made it earlier when I faced a lot of errors. 
-
 
 > State
 > App is running!
