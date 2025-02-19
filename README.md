@@ -13,14 +13,11 @@ Second thing: Most of students will use `sqllite3` because that's what copilot s
 
 When we need data from the database, or we want insert new data, we send request from frontend, and the backend handle it. then the backend has the right to do the changes in the database or send data.
 
-![[Pasted image 20241104201227.png ]]
+![Pasted image 20241104201227](https://github.com/user-attachments/assets/53081f06-c525-46d2-aaaa-38bb7a7b203d)
 
----
-
----
-
-> [!tip] Tip
-> This flowchart is basic, because we could use an `API` to filter any `SQL injection` and we call it a `Secure API`
+> Tip
+> This flowchart is basic, because we could use an `API` to filter any `SQL
+>  injection` and we call it a `Secure API`
 
 So the backend is the responsible for select and insert, for that we want a filter in python to prevent [[SQL injection]] 
 
@@ -32,19 +29,17 @@ So the backend is the responsible for select and insert, for that we want a filt
 
 I would not talk a lot about frontend files, you can check them but here is the login-form:
 
-![[Pasted image 20241104221544.png]]
+![Pasted image 20241104221544](https://github.com/user-attachments/assets/cb365b23-d3f0-4686-b34c-82b1605575a7)
 
-I didn't use any frameworks, I just used [[HTML]] and [[CSS]] and [[JavaScript]] 
+
+I didn't use any frameworks, I just used HTML and CSS and JavaScript
 
 You can find the code of these files at `/Project-Files/template` and `/Project-Files/static` and it's standard way to organize files while building basic web pages like that
 
----
-
----
 
 ## Database
 
-I opened [[Microsoft SQL Server]] and then made a new database called `myDB` then I made a new query that create `users` table :
+I opened Microsoft SQL Server and then made a new database called `myDB` then I made a new query that create `users` table :
 
 ```SQL
     CREATE TABLE users (
@@ -57,14 +52,6 @@ I opened [[Microsoft SQL Server]] and then made a new database called `myDB` the
  INSERT INTO users (username, password) VALUES ('admin', 'admin');
 ```
 
-So now we have the database:
-
-![[Pasted image 20241104232052.png]]
-
----
-
----
-
 ## Backend 
 
 first: I should install `pyodbc` by running:
@@ -73,7 +60,7 @@ first: I should install `pyodbc` by running:
 pip install pyodbc
 ```
 
- it's library for connecting to [[Microsoft SQL Server]] and then I installed `Flask` to handle requests from user by running: `pip install Flask`
+ it's library for connecting to Microsoft SQL Server and then I installed `Flask` to handle requests from user by running: `pip install Flask`
 
 ### Code Connection 
 
@@ -112,7 +99,7 @@ import re
 
 ---
 
-> [!tip] Tip
+>  Tip
 > We could use `Flask-login` to make it easy, but in this project I didn't use it.
 
 #### Example about regular expression module
@@ -158,81 +145,29 @@ Then we route the user to `/` and make a default page that contain a **'hello th
 
 from these two examples, we can now build the idea we want, and we know python is so easy especially when we use modules .
 
-
 ---
 
----
-
-### Python full code
-
-```python 
-from flask import Flask, render_template, request
-
-import re
-
-app = Flask(__name__)
-
-@app.route('/')
-
-def home():
-    return render_template('index.html')
-
-@app.route('/login', methods=['POST'])
-
-def login():
-    username = request.form['username']
-    password = request.form['password']
-    
-    # Validate input using regex to prevent SQL injection
-    if not re.match(r'^[a-zA-Z0-9_]+$', username):
-        return 'Invalid username format'
-        
-    if not re.match(r'^[a-zA-Z0-9_]+$', password):
-        return 'Invalid password format'
-        
-    conn = odbc.connect(Connection)
-    
-    cursor = conn.cursor()
-    
-    query = "SELECT * FROM users WHERE username = ? AND password = ?"
-    
-    cursor.execute(query, (username, password))
-    
-    result = cursor.fetchone()
-    
-    if result:
-        return 'Logged in successfully'
-        
-    else:
-        return 'Invalid credentials'
-
-if __name__ == '__main__':
-    app.run(debug=True)
-```
-
----
-
----
 
 ## The Project 
 
 We are done! here are the project files in `/Project-Files` I used `Vs Code` to make this project. This also my first try with building `backend` and linking database . 
 
-![[Pasted image 20241104234009.png]]
+![Pasted image 20241104234009](https://github.com/user-attachments/assets/29ec3710-6c53-4929-a130-95a053436f24)
 
 we run the code by: `python app.py` and here the output: 
 
-![[Pasted image 20241104230830.png]]
+![Pasted image 20241104230830](https://github.com/user-attachments/assets/4ccb32c5-a1e5-4a30-9203-6a0925210e2a)
+
 
 Everything is great! The flask app is running without errors, and this app won't end until I press `Ctrl + C ` as developer, also as we can see: `Debug mode: on` and that's a choice I made it earlier when I faced a lot of errors. 
 
 
-> [!success] State
+> State
 > App is running!
 
 We can go to http://127.0.0.1:5000 for testing our secure backend, now I will try to inject SQL in the login-form: 
 
-![[Pasted image 20241104231355.png | 600]]
+![Pasted image 20241104231355](https://github.com/user-attachments/assets/13eb80fa-0819-4443-a9d7-85c53e93ba7d)
 
 But that or any other method won't work at all, and the response will be: `Invalid username format` or `Invalid password format` because only 4 lines of code:
 
@@ -261,5 +196,3 @@ def execute_sql_file(file_path):
     conn.close()
 ```
 
-
-# This Project by: Ibrahem Hasaki.
