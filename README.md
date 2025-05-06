@@ -35,7 +35,7 @@ In a web application:
 
 ![Data Flowchart](https://github.com/user-attachments/assets/53081f06-c525-46d2-aaaa-38bb7a7b203d)
 
-> 🧠 *Tip: In real-world applications, a dedicated **Secure API** can be used to filter malicious requests more effectively.*
+🧠 *Tip: In real-world applications, a dedicated **Secure API** can be used to filter malicious requests more effectively.*
 
 ---
 
