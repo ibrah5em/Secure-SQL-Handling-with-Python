@@ -31,7 +31,7 @@ In a web application:
 * The **backend** processes requests and interacts with the **database**.
 * If not secured, the backend becomes vulnerable to SQL injection.
 
-> ✅ This project aims to **secure the backend** by validating input using **regular expressions**, preventing malicious SQL statements.
+✅ This project aims to **secure the backend** by validating input using **regular expressions**, preventing malicious SQL statements.
 
 ![Data Flowchart](https://github.com/user-attachments/assets/53081f06-c525-46d2-aaaa-38bb7a7b203d)
 
